@@ -2,8 +2,8 @@ import Image from "next/image";
 
 function Card({ img, text }: { img: string; text: string }) {
   return (
-    <div style={{ width: "300px", height: "300px" }}>
-      <div className="w-full group h-full relative hover:opacity-100">
+    <div className="w-full " style={{ height: "300px" }}>
+      <div className="w-full group h-full p-3 relative hover:opacity-100">
         <Image
           alt="pic"
           width={300}

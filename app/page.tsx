@@ -1,10 +1,17 @@
 import Image from "next/image";
 import { Lalezar } from "next/font/google";
+import { Cookie } from "next/font/google";
+
 import Navbar from "@/components/navbar";
-import About from "./about/page";
-import Card from "@/components/card";
+import Carousel from "@/components/carousel";
 
 const lalezar = Lalezar({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const cookie = Cookie({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -14,9 +21,9 @@ export default function Home() {
   return (
     <div className=" w-full flex flex-col  ">
       <Navbar />
-      <main className="">
+      <main className=" w-full h-screen">
         <div
-          className={`flex px-24 ${lalezar.className}  flex-col w-full h-screen relative z-10 pt-20`}
+          className={`flex px-16 md:px-24 ${lalezar.className} pb-28 md:pb-40  flex-col w-full h-full relative z-10 pt-16 md:pt-20`}
         >
           {" "}
           <h1 className="font-bold text-7xl">HOLLY</h1>
@@ -34,19 +41,19 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="z-0 absolute top-0 right-0">
-          <Image src={"/pic.png"} alt="pic" width={1000} height={800}></Image>
+        <div className="z-0 absolute  md:top-0 top-1/3 md:right-0">
+          <Image src={"/pic.png"} alt="pic" width={1000} height={1000}></Image>
         </div>
       </main>
-      <div className="flex justify-center items-center  py-9">
-        <div className="max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5  z-50">
-          <Card img="/varanasi.png" text="Varanasi" />
-          <Card img="/prayagraj.jpg" text="Prayagraj" />
-          <Card img="/lucknow.jpg" text="Lucknow" />
-          <Card img="/ayodhya.jpg" text="Ayodhya" />{" "}
-          <Card img="/bodh.avif" text="Bodh Gaya" />
+      <h1 className={`font-bold ${cookie.className} text-6xl md:text-8xl my-6 text-center`}>
+        Places to Explore
+      </h1>
+      <div className="bg-rose-100   py-10">
+        <div className="">
+          <Carousel />
         </div>
       </div>
+      <div>jii</div>
     </div>
   );
 }

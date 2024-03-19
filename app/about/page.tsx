@@ -1,8 +1,14 @@
-import Card from "@/components/card";
+import Info from "@/components/infoCard";
+import InfoRev from "@/components/infoRev";
 import React from "react";
 
 function About() {
-  return <Card />;
+  return (
+    <div>
+      <Info/>
+      <InfoRev />
+    </div>
+  );
 }
 
 export default About;
